@@ -1,0 +1,445 @@
+        *,
+        *::before,
+        *::after {
+            padding: 0;
+            margin: 0;
+            border: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        ul,
+        ol,
+        li {
+            list-style: none;
+        }
+
+        img {
+            vertical-align: top;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: inherit;
+            font-style: inherit;
+        }
+
+        html,
+        body {
+            height: 100%;
+            line-height: 1;
+            font-size: 16px;
+            font-family: "PT Sanas";
+            background: linear-gradient(270deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+            background-size: 400% 400%;
+            animation: gradientBG 8s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .wrapper {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .sideBar {
+            background-color: rgb(247, 247, 245);
+            min-height: 100vh;  
+            
+        }
+
+        .notes {
+            padding: 8px;
+        }
+
+        .notes__top {
+            width: 296px;
+            display: flex;
+            align-items: center;
+            padding: 8px;
+        }
+
+        .notes__title {
+            
+            color: rgb(145, 145, 142);
+        }
+
+        .notes__plus {
+            width: 14px;
+            height: 14px;
+            margin-left: auto;
+            cursor: pointer;
+            display: none;
+        }
+
+        .notes__top:hover {
+            border-radius: 6px;
+            background-color: rgb(0, 0, 0, 0.1);
+        }
+
+        .notes__top:hover .notes__plus {
+            display: block;
+        }
+
+        .notes__note {
+            margin-bottom: 2px;
+            padding: 5px 8px;
+            border-radius: 6px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .note-notes__title {
+            height: 18.4px;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .note-notes__img {
+            width: 18px;
+            height: 18px;
+            margin-right: 8px;
+            flex-shrink: 0;
+        }
+        
+
+        .notes__imgs {
+            position: relative;
+            display: none;
+            margin-left: auto;
+        }
+
+        .imgs-notes__rename {
+            width: 18x;
+            height: 18px;
+        }
+
+        .imgs-notes__garbage {
+            width: 18px;
+            height: 18px;
+            margin-left: 4px;
+        }
+
+        .imgs-notes__priority {
+            width: 18px;
+            height: 18px;
+            margin-left: 4px;
+        }
+
+        .notes__note:hover .notes__imgs{
+            display: flex;
+        }
+
+        .content {
+            position: relative;
+            padding: 50px 250px;
+            flex-grow: 1;
+             min-height: 100vh;
+            overflow-y: auto;
+        }
+
+        .content__child {
+            height: 100%;
+            flex-direction: column;
+            display: none;
+        }
+
+        .active {
+            display: flex;
+        }
+
+        .content__top {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .content__tasks {
+            display: flex;
+            flex-direction: column;
+            width: 120px;
+            margin-left: 32px;
+        }
+
+        .tasks-content__button {
+            padding: 2px 4px;
+            border-radius: 4px;
+            cursor:pointer;
+        }
+
+        .content__body {
+            position: relative;
+            height: 100%;
+        }
+
+        .content__text {
+            width: 100%;
+            height: 100%;
+            font-size: 16px;
+            border-radius: 8px;
+            padding: 12px;
+            line-height: 1.5;
+            outline:none;
+            resize: none;
+        }
+
+        .content__title {
+            font-size: 40px;
+            font-weight: 500;
+            margin-right: 42px;
+            padding: 4px;
+            border-radius: 10px;
+            outline: none;
+        }
+
+        .content__title::placeholder {
+            color: rgb(145, 145, 142);
+            font-size: 40px;
+            font-weight: 500;
+        }
+
+        .title-note__span {
+            padding: 0;
+            margin: 0;
+            font-size: 16px;
+            max-width: 65px;    
+            white-space: nowrap;  
+            overflow: hidden;   
+            text-overflow: ellipsis; 
+            display: inline-block; 
+        }
+
+        .title-note__input {
+            width: 65px;
+            font-size: 16px;
+            background: none;
+            outline: none;
+            font-family: "PT Sanas";
+            line-height: 1;
+            display: none;
+        }
+
+        .title-active {
+            display: inline;
+        }
+
+        .title-note__input::placeholder {
+            font-size: 16px;
+        }
+
+        .task-item {
+            display: flex;
+            align-items: center;
+            
+            margin-bottom: 2px;
+        }
+
+        .task-item__input {
+            margin-right: 4px;
+        }
+
+        .task-active {
+            text-decoration: line-through;
+        }
+
+        .task-item__imgs {
+            display: none;
+            margin-left: 6px;
+            align-items: center;
+            position: relative;
+        }
+
+        .task-item__imgs_rename {
+            width: 16x;
+            height: 16px;
+        }
+
+        .task-item__imgs_garbage {
+            width: 16x;
+            height: 16px;
+            margin-left: 4px;
+        }
+
+        .task-item__imgs_prioriry {
+            width: 16x;
+            height: 16px;
+            margin-left: 4px;
+        }
+
+        .task-item:hover .task-item__imgs{
+            display: flex;
+        }
+
+        .error {
+            outline: 1px solid red;
+            background-color: #ffe6e6;
+        }
+
+        .tasks-content__input {
+            padding: 2px 4px;
+            margin-bottom: 6px;
+            border-radius: 4px;
+        }
+
+        .task-item__inputText {
+            display: none;
+            outline: none;
+            font-size: 16px;
+            font-family: "PT Sanas";
+            font-size: inherit;  
+            line-height: inherit;
+        }
+
+        .task-item__p {
+            font-size: 16px;
+            height: 18.4px;
+        }
+
+        .task-item__textWidth {
+            position: absolute;
+            visibility: hidden;
+            white-space: pre;
+            font-size: 16px;
+        }
+
+        .task-input-active {
+            display: inline;
+        }
+
+        .note-created__date {
+            font-size: 14px;
+            margin-right: 6px;
+        }
+
+        .fontsettings__elem {
+            display: flex;
+            width: 290px;
+            font-family: "PT Sanas";
+           
+            font-size: 16px;
+        }
+
+        .fontsettings__elem:not(:last-child) {
+            margin-bottom: 8px;
+        }
+
+        .fontsettings__elem-label {
+            width: 120px;
+        }
+
+        .fontsettings__elem-select {
+            border-radius: 4px;
+            width: 150px;
+        }
+
+        .priority__body {
+            display: none;
+            z-index: 10;
+            position: absolute;
+            padding: 6px;
+            left: 70%;
+            top: 115%;
+            border-radius: 8px;
+            background-color: #fff;
+            border: 1px solid black;
+        }
+
+        .default {
+            color: #ffe6e6;
+        }
+
+
+        .active__imgs {
+            display: flex;
+        }
+        .task-item__cont{
+            display: flex;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+        .search__input {
+            background-color: rgb(247, 247, 245);
+            font-size: 16px;
+            font-family: "PT Sanas";
+            padding: 4px 8px;
+            margin: 4px 0;
+            width: 100%;
+        }
+        
+        
+        .hide {
+            display: none;
+        }
+        .no-notes-message {
+            font-size: 16px;
+            font-family: "PT Sanas";
+            padding: 4px 8px
+        }
+
+        .content__sort {
+            margin-bottom: 8px;
+            align-items: center;
+        }
+
+        .sort__img {
+            width: 22px;
+            height: 22px;
+            margin-left: 6px;
+            cursor: pointer;
+        }
+
+        .sort__select {
+            padding: 6px;
+            border-radius: 8px;
+        }
+
+        .task__date {
+            margin-left: 8px;
+        }
+
+        .task-item {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .content__sort {
+            display: none;
+        }
+
+        .slide-out-left {
+            animation: slideOutLeft 0.4s forwards;
+        }
+        
+        @keyframes slideOutLeft {
+            0% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+        }
